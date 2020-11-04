@@ -108,6 +108,7 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    margin: auto;
 }
 
 td button {
@@ -131,6 +132,10 @@ td button:active {
     height: 100px;
 }
 
+.div-back-button{
+    margin-top: 80px;
+    text-align: center;
+}
 
 #back-button {
     background-color: white;
