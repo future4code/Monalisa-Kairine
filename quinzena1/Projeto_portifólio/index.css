@@ -1,0 +1,247 @@
+*{
+  margin: 0;
+  padding:0;
+}
+
+body {
+  font-family: 'Varela', sans-serif;
+  
+}
+
+
+ul{
+  padding-left: 15%;
+  text-align: left;
+  list-style-position: inside;
+}
+
+
+h1{
+  font-size: 72px;
+  text-align: center;
+ }
+
+h2{
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+p, h3{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+h3{
+  padding-bottom: 2%;
+}
+
+
+div{
+  font-size: 1em;
+  line-height: 2;
+}
+
+
+
+/* **************************** Estilo da barra de navegação Superior *************************************  */
+
+.topnav {
+  overflow: hidden;
+  background-color: #192f38;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left; /*deixou os icones do navegador superior um ao lado do outro*/
+  display: block;
+  color: white; /*cor da letra no navegador superior*/
+  padding: 20px 20px; /*padding*/
+  text-decoration: none;
+}
+
+.topnav a {
+  float: left;                        /*deixou os icones do navegador superior um ao lado do outro*/
+  display: block;
+  color: white;                    /*cor da letra no navegador superior*/
+  padding: 15px 20px; 
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #00ddc1;       /*Cor que fica ao passarmos o mouse*/
+  color: black;                    /*Cor da letra no menu superior*/
+}
+
+/* ***********************************Rodapé****************************************/
+
+
+footer {
+  left: 0;
+  padding: 1%;
+  width: 100%;
+  background-color: #192f38;
+  color:white;
+  text-align: center;
+
+}
+
+.fa {
+  display: inline;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 4px;
+  border-radius: 10px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+#icon_ref{
+  color:black;
+  text-align: right;
+  font-size: 12px;
+}
+
+#icon_ref a{
+  color:black;
+}
+/* ************************************* Estilo do cabeçalho ************************************* */
+.principal {
+  background-color:white;
+  padding: 16vh;
+}
+
+img{
+  display: block;                   /*Faz com que o elemento ocupe todo o espaço disponível*/
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+}
+
+#icon{
+  padding-top: 5%;
+  height: 100px;
+}
+
+/****************** Tudo relacionados aos blocos principais com conteúdo ***********************************/
+
+.blocos{
+  padding-top: 4%; 
+  padding-bottom: 4%; 
+}
+
+#bloco1{
+  background-color:  #e9c46a;;
+}
+
+#bloco2{
+  background-color: #f4a261;
+}
+
+#bloco3{
+  background-color: #2a9d8f;
+}
+
+#bloco4{
+  background-color: #264653
+}
+
+/*****************  Tudo relacionado as colunas no bloco habilidades e projetos  *****************/
+
+.container {
+  width: 100%;
+  text-align:center;
+  
+}
+
+.col {
+  width: 400px;
+  display:inline-block;
+  border:2px dashed #2a9d8f;
+  margin: 0 24px;
+}
+
+
+
+/* ********************************** Tudo relacionado ao formulário ************************************ */
+
+.input-container {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form{
+  max-width:500px;
+  margin:auto;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid #00ddc1;      /*Cor que aparece ao redor da caixa ao selecionarmos ela*/
+}
+
+
+.btn {                              /* Configurações do botão enviar */
+  background-color: #00ddc1;
+  color: black;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  opacity: 0.9;
+}
+
+
+.btn:hover {                       /*Seleciona um estilo para quando o mouse passa*/
+  opacity: 1;
+}
+
+textarea  
+{  
+   font-family: 'Varela', sans-serif; 
+   padding-left: 6px
+}
+
+textarea:focus{
+    border: 3px solid #00ddc1;
+    outline: none                 /*importante - tirou a linha preta que tava aparecendo antes*/;
+}
+
+/************** Coisas relacionados aos projetos ************************/
+
+.imag_projeto{
+  width: 30%;
+  height: auto;
+}
+
+#bloco1_loja{
+  background-color:  #e9c46a;;
+}
+
+#bloco2_loja{
+  background-color: #f4a261
+}
+
+#bloco3_loja{
+  background-color: #2a9d8f;
+}
+
+#bloco1_labenu{
+  background-color:  #e9c46a;;
+}
+
+#bloco2_labenu{
+  background-color: #f4a261
+}
