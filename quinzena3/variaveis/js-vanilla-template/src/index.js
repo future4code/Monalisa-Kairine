@@ -80,13 +80,11 @@ console.log(comidasPreferidas[4])
 
 let exercicio4 = ["Voce esta de azul hoje?", "Esta chovendo na sua cidade hoje?", "Você trabalhou hoje?" ]
 
-let azulHoje = true
-let chuvaHoje = false 
-let trabalhoHoje = true 
+respostas = [true, false, true]
 
-console.log(exercicio4[0], azulHoje)
-console.log(exercicio4[1], chuvaHoje)
-console.log(exercicio4[2], trabalhoHoje)
+console.log(exercicio4[0], resposta[0])
+console.log(exercicio4[1], resposta[1])
+console.log(exercicio4[2], resposta[2])
 
 
 
