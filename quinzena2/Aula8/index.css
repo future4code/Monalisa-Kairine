@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+header{
+    display: grid;
+    background-color: chocolate;
+    align-items: center;
+    padding-left: 24px;
+    grid-template-columns: auto auto;
+}
+
+#search-box{
+    display:grid;
+    grid-column: 2;
+    justify-content: right;
+    padding-right: 24px;
+}
+
+
+main{
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+article{
+    display: grid;
+    grid-template-rows: auto auto;
+    text-align:  center;
+}
+
+.page{
+    display:grid;
+    grid-template-rows: 80px 1fr 80px;
+    min-height: 100vh;
+}
+
+
+.video{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+footer{
+    display:grid;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+}
+
