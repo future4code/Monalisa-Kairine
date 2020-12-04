@@ -1,76 +1,63 @@
-// Função para limpar tarefas
+//Função para limpar uma tarefa
+
 function limparTarefa() {
-    const limparClasse = document.getElementsByClassName("ulTarefas")
-    for (let i = 0; i < limparClasse.length; i++){
-        limparClasse[i].innerHTML = " "
+    const limparTarefas = document.getElementsByClassName("divTarefas")
+    for (let i = 0; i < limparTarefas.length; i++){
+        limparTarefas[i].innerHTML = ""
     } 
-    
-        
-    }
+}
 
-let contador = 1
-
-// Função para adicionar tarefas
-function adicionarTarefa() {
-    const tarefa = document.getElementById("tarefa")
-    const diasSemana = document.getElementById("dias-semana")
-    console.log(diasSemana.value)
-    if (tarefa.value !== "") {
-        switch (diasSemana.value) {
-            case "domingo":
-                const domingoUl = document.getElementById("domingo")
-                domingoUl.innerHTML += `<li class="tarefas" id="domingo${contador}" onclick="document.getElementById('domingo${contador}').style.textDecoration = 'line-through'">${tarefa.value}</li>`
+//Função para adicionar uma tarefa
+function adicionarTarefa(){
+    const tarefa = document.getElementById("tarefa") //id do input
+    const diaSemana = document.getElementById("dias-semana")
+    if(tarefa.value !== ""){
+        switch(diaSemana.value){
+            case "domingo" :
+                const tarefaDomingo = document.getElementById("domingo")
+                tarefaDomingo.innerHTML += `<li>${tarefa.value}</li>`
                 tarefa.value = ""
-                contador += 1
                 break;
-            
-            case "segunda":
-                const segundaUl = document.getElementById("segunda")
-                segundaUl.innerHTML += `<li class="tarefas" id="segunda${contador}" onclick="document.getElementById('segunda${contador}').style.textDecoration = 'line-through'">${tarefa.value}</li>`
+
+            case "segunda" :
+                const tarefaSegunda = document.getElementById("segunda")
+                tarefaSegunda.innerHTML +=`<li>${tarefa.value}</li>`
                 tarefa.value = ""
-                contador += 1
                 break;
 
             case "terca":
-                const tercaUl = document.getElementById("terca")
-                tercaUl.innerHTML += `<li class="tarefas" id="terca${contador}" onclick="document.getElementById('terca${contador}').style.textDecoration = 'line-through'">${tarefa.value}</li>`
+                const tarefaTerca = document.getElementById("terca")
+                tarefaTerca.innerHTML +=`<li>${tarefa.value}</li>`
                 tarefa.value = ""
-                contador += 1
                 break;
-    
+
             case "quarta":
-                const quartaUl = document.getElementById("quarta")
-                quartaUl.innerHTML += `<li class="tarefas" id="quarta${contador}" onclick="document.getElementById('quarta${contador}').style.textDecoration = 'line-through'">${tarefa.value}</li>`
+                const tarefaQuarta = document.getElementById("quarta")
+                tarefaQuarta.innerHTML +=`<li>${tarefa.value}</li>`
                 tarefa.value = ""
-                contador += 1
                 break;
 
             case "quinta":
-                const quintaUl = document.getElementById("quinta")
-                quintaUl.innerHTML += `<li class="tarefas" id="quinta${contador}" onclick="document.getElementById('quinta${contador}').style.textDecoration = 'line-through'">${tarefa.value}</li>`
+                const tarefaQuinta = document.getElementById("quinta")
+                tarefaQuinta.innerHTML +=`<li>${tarefa.value}</li>`
                 tarefa.value = ""
-                contador += 1
-                break;
-    
-            case "sexta":
-                const sextaUl = document.getElementById("sexta")
-                sextaUl.innerHTML += `<li class="tarefas" id="sexta${contador}" onclick="document.getElementById('sexta${contador}').style.textDecoration = 'line-through'">${tarefa.value}</li>`
-                tarefa.value = ""
-                contador += 1
-                break;
-    
-            case "sabado":
-                const sabadoUl = document.getElementById("sabado")
-                sabadoUl.innerHTML += `<li class="tarefas" id="sabado${contador}" onclick="document.getElementById('sabado${contador}').style.textDecoration = 'line-through'">${tarefa.value}</li>`
-                tarefa.value = ""
-                contador += 1
                 break;
 
-            default:
+            case "sexta":
+                const tarefaSexta = document.getElementById("sexta")
+                tarefaSexta.innerHTML +=`<li>${tarefa.value}</li>`
+                tarefa.value = ""
                 break;
-        } 
-    } else {
-        alert("Você precisa digitar uma tarefa!")
+
+            case "sabado":
+                const tarefaSabado = document.getElementById("sabado")
+                tarefaSabado.innerHTML +=`<li>${tarefa.value}</li>`
+                tarefa.value = ""
+                break;
+                                
+        }
+    }else{
+        alert("Digite uma tarefa!")
     }
 
 }
