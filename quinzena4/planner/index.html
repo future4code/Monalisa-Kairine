@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+    <title>Planner</title>
+</head>
+<body>
+    <header>
+        <form action="">
+            <label for="tarefa">Nova tarefa:</label>
+            <input type="text" id="tarefa">
+            <select name="dias-semana" id="dias-semana">
+                <option value="domingo">Domingo</option>
+                <option value="segunda">Segunda-feira</option>
+                <option value="terca">Terça-feira</option>
+                <option value="quarta">Quarta-feira</option>
+                <option value="quinta">Quinta-feira</option>
+                <option value="sexta">Sexta-feira</option>
+                <option value="sabado">Sábado</option>
+            </select>
+        </form>
+
+        <button onclick="adicionarTarefa()">Criar tarefa</button>
+        <button onclick="limparTarefa()">Limpar tarefas</button>
+        
+    </header>
+    <section>
+        <div class="semana">
+            <h3>Domingo</h3>
+            <div class="divTarefas" id="domingo">
+                <ul id="tarefaDomingo">
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="semana">
+            <h3>Segunda-feira</h3>
+            <div class="divTarefas" id="segunda">
+                <ul id="tarefaSegunda">
+                
+                </ul>
+            </div>
+        </div>
+
+        <div class="semana">
+            <h3>Terça-feira</h3>
+            <div class="divTarefas" id="terca">
+                <ul id="tarefaTerca">
+
+                </ul>
+            </div>
+        </div>
+    
+        <div class="semana">
+            <h3>Quarta-feira</h3>
+            <div class="divTarefas" id="quarta">
+                <ul id="tarefaQuarta">
+
+                </ul>
+            </div>
+        </div>
+    
+        <div class="semana">
+            <h3>Quinta-feira</h3>
+            <div class="divTarefas" id="quinta">
+                <ul id="tarefaQuinta">
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="semana">                    
+            <h3>Sexta-feira</h3>               
+            <div class="divTarefas" id="sexta">
+                <ul id="tarefaSexta">
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="semana">
+            <h3>Sábado</h3>
+            <div class="divTarefas" id="sabado">
+                <ul id="tarefaSabado">
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
