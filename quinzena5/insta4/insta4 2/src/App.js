@@ -46,6 +46,7 @@ class App extends React.Component {
       fotoPost: 'https://picsum.photos/200/170'
     }
   ],
+  
   valorInputNomeUsuario: "",
   valorInputFotoUsuario: "",
   valorInputFotoPostagem: "",
