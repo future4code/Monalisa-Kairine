@@ -14,6 +14,7 @@ import iconeShare from '../../img/share.svg'
 
 
 class Post extends React.Component {
+
   state = {
     curtido: false,
     numeroCurtidas: 0,
@@ -23,6 +24,7 @@ class Post extends React.Component {
     compartilhando: false,
   }
 
+ 
   onClickCurtida = () => {
     console.log(this.state.curtido)
     this.setState({
