@@ -8,7 +8,9 @@ export default function App() {
 
   const [currentPage, setCurrentPage] = useState("playlistCreationPage");
 
-  const changePage = (currentPage) => {setCurrentPage(currentPage)}
+  const changePage = (currentPage) => {
+    setCurrentPage(currentPage)
+  }
 
     return (
       <AppContainer>

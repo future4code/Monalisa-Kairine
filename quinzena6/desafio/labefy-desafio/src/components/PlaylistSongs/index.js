@@ -6,8 +6,6 @@ import { PlaylistDetailContainer, TrackCreationForm, Button } from "./styled"
 
 export default function PlaylistSongs(props) {
 
-    console.log("props playlist songs",props)
-
     const [tracks, setTracks] = useState([])
     const [trackName, setTrackName] = useState("")
     const [artist, setArtist] = useState("")
