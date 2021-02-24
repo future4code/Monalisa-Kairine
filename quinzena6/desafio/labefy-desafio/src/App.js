@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Header from './components/Header/index';
+import PlaylistCreationPage from './screens/PlaylistCreationPage';
+import PlaylistManagerPage from './screens/PlaylistManagerPage';
+import {AppContainer} from "./styled";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+
+  const [currentPage, setCurrentPage] = useState("playlistCreationPage");
+
+  const changePage = (currentPage) => {setCurrentPage(currentPage)}
+
+    return (
+      <AppContainer>
+        <Header changePage = {changePage}/>
+        {currentPage === "playlistCreationPage" ? <PlaylistCreationPage /> : <PlaylistManagerPage />}
+      </AppContainer>
+    );
 }
-
-export default App;
