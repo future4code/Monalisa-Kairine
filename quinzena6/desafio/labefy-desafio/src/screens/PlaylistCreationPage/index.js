@@ -13,9 +13,10 @@ export default function PlaylistCreationPage() {
     }
 
     const createPlaylist = (event) => {
+        
         event.preventDefault();
         const body = {
-            name: this.state.inputNameValue
+            name: inputNameValue
         };
 
         axios.post(baseUrl, body, axiosConfig).then(() => {
@@ -23,7 +24,7 @@ export default function PlaylistCreationPage() {
         }).catch(err => [
             alert(err)
         ]);
-        this.setState({inputNameValue: ""});
+        setInputNameValue("");
     };
     
         return (

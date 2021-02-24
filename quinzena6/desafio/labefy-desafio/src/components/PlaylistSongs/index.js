@@ -6,6 +6,8 @@ import { PlaylistDetailContainer, TrackCreationForm, Button } from "./styled"
 
 export default function PlaylistSongs(props) {
 
+    console.log("props playlist songs",props)
+
     const [tracks, setTracks] = useState([])
     const [trackName, setTrackName] = useState("")
     const [artist, setArtist] = useState("")
@@ -23,7 +25,7 @@ export default function PlaylistSongs(props) {
         });
     };
     const removeTrackFromPlaylist = (trackId) => {
-        axios.delete(`${baseUrl}/${this.props.playlistId}/tracks/${trackId}`, axiosConfig).then(() => {
+        axios.delete(`${baseUrl}/${props.playlistId}/tracks/${trackId}`, axiosConfig).then(() => {
             getPlaylistTracks();
         }).catch(err => {
             console.log(err);
