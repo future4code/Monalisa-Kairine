@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { CardStyle, CardInfo, ButtonClear, ImgMatch, DivButton } from './styled'
+import { CardStyle, CardInfo, ButtonClear, ImgMatch, DivButton, MatchInfo } from './styled'
 
 
 
@@ -21,7 +21,7 @@ export default function MatchScren(props) {
   }
   useEffect(() => {
     getMatch();
-  }, []);
+  },[]);
 
   const getMatch = () => {
     axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/monalisa-pereira/matches")
@@ -33,9 +33,9 @@ export default function MatchScren(props) {
   }
   const viewMatch = match.map((user) => {
     return (
-      <div key={user.id}>
-        <p><ImgMatch src={user.photo} />{user.name}</p>
-      </div>
+      <MatchInfo key={user.id}>
+        <ImgMatch src={user.photo} /><p>{user.name}</p>
+      </MatchInfo>
     )
   })
 

@@ -7,12 +7,18 @@ export const CardStyle = styled.div`
     height: 520px;
 `;
 
-export const CardInfo = styled.main`
+export const CardInfo = styled.div`
     margin: 0 2em;
-    max-width:100%;
+    max-width: 100%;
     max-height: 480px;
     overflow-y: scroll;
 `;
+
+export const MatchInfo = styled.div`
+display: grid;
+grid-template-columns: auto auto;
+align-items: center;
+`
 
 export const ButtonClear = styled.button`
 
