@@ -1,28 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import MainScreen from './Screens/MainScren'
 import MatchScreen from './Screens/MatchScren'
 import Header from './Components/Header'
-import styled from 'styled-components'
+import {AppContainer, PageContainer} from './styled'
 
-const AppContainer = styled.div`
-display: grid;
-justify-content: center;
-align-items: center;
-height: 100vh;
-
-`
-
-const PageContainer = styled.div`
-display: grid;
-grid-template-rows: auto auto;
-background-color: white;
-width: 440px;
-height: 600px;
-border-style: solid;
-border-radius: 8px;
-border-width: 1px;
-
-`
 
 export default function App() {
 
@@ -33,7 +14,10 @@ export default function App() {
   return (
     <AppContainer>
       <PageContainer>
-        <Header setPage = {setPage}/>
+        <Header 
+          setPage = {setPage}
+          currentPage = {currentPage}
+        />
         {currentPage ? <MainScreen /> : <MatchScreen />}
       </PageContainer>
     </AppContainer>

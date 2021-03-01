@@ -35,8 +35,4 @@ export const ImgMatch = styled.img`
   border-radius: 50%;
 `;
 
-export const Astro = styled.span`
-  display: flex;
-  color: #48A498;
-   
-`;
+

@@ -2,21 +2,34 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
 display: grid;
-grid-template-columns: auto auto;
-width: 440px;
+grid-template-columns: auto auto auto;
+width: 400px;
 align-items: center;
 justify-content: space-around;
-border-bottom: 1px solid black;
+border-bottom: 1px solid #ced4da;
 height: 60px;
 
-h3{
+h2{
   margin: 0;
+  grid-column: 2;
 }
 
 `
 
 export const HeaderImg = styled.img`
-height: 36px;
+height: 30px;
 width: auto;
 
+  :hover{
+    transform: scale(0.9)
+};
+
 `
+
+export const Astro = styled.span`
+  color: #48A498;
+`;
+
+export const Match = styled.span`
+  color: #762D93;
+`;

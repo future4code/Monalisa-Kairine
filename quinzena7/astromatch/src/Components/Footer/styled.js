@@ -13,10 +13,17 @@ export const Like = styled.img`
     display: grid;
     height: 50px;
     width: auto;
+
+    :hover{
+        transform: scale(1.1)
+    }
 `
 
 export const Dislike = styled.img`
     display:grid;
     height: 50px;
     width: auto;
+    :hover{
+        transform: scale(1.1)
+    }
 `
