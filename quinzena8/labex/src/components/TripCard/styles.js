@@ -24,7 +24,6 @@ export const ApplyButton = styled.button`
   background-color: #2a9d8f;
   color: black;
 }
-
 `
 
 export const DivTripCard = styled.div`
@@ -35,5 +34,5 @@ padding: 30px;
 text-align: center;
 align-content: space-between;
 justify-content: center;
-height: 500px;
+height: 520px;
 `;

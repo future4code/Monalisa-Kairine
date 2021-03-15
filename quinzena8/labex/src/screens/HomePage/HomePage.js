@@ -1,8 +1,9 @@
 import React from "react"
 import {useHistory} from "react-router-dom"
-import {Container, Button, Logo, ContainerButtons, ContainerLogo} from "./styles"
-import rocket from "../../Assets/rocket-lauch.svg"
+import {Container, Button, ContainerButtons, Logo, ContainerLogo} from "./styles"
+import rocket from "../../Assets/rocket-launch.svg"
 const HomePage = () => {
+    
     const history = useHistory()
 
     const goToLoginPage = () => {
@@ -16,6 +17,7 @@ const HomePage = () => {
     return(
         <Container>
             <ContainerLogo>
+                <Logo src={rocket}/>
                 <h1> LabeX</h1>
             </ContainerLogo>
             <ContainerButtons>

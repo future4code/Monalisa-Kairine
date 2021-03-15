@@ -7,41 +7,39 @@ import { useRequestData } from "../../hooks/useRequestData"
 import { BackButton, ScreenContainer, PageContainer } from "./styles"
 
 
+
 const AllTripsPage = () => {
     const history = useHistory()
     const [image, setImage] = useState({})
-    const [data, setData] = useState([])
 
     const goToHomePage = () => {
     history.push("/")
     }
 
     const getTrips = useRequestData(`${baseUrl}trips`,undefined)
-    console.log("getTrips", getTrips)
 
-
-    const getImage = () => {
-        axios.get(`https://api.nasa.gov/planetary/apod?date=2019-12-${1}&api_key=oDClzfqOYnw1w9igwUNvUkgL8ZVzgshkwcFl8q8b`)
+    const getImage = (day) => {
+        axios.get(`https://api.nasa.gov/planetary/apod?date=2019-12-${day}&api_key=oDClzfqOYnw1w9igwUNvUkgL8ZVzgshkwcFl8q8b`)
         .then((response)=> {
-            setImage(response.data)
+            setImage(response.data.url)
         })
-    }   
-
+    } 
+    
     useEffect(() => {
-        getImage()
-      }, [])
+        getImage(1)
+      },[]) 
 
- 
+    
   
     return (
       <PageContainer>
-    
+  
         <h1> Conheça Nossas Viagens Disponíveis!</h1>
 
         <ScreenContainer>
-          {getTrips && getTrips.trips.map((item) => {
-                return (
-                <div>
+          {getTrips && getTrips.trips.map((item, idx) => {
+                return (                  
+                <div key={idx}>
                     <TripCard
                     key={item.id}
                     id={item.id}
@@ -50,14 +48,14 @@ const AllTripsPage = () => {
                     duration={item.durationInDays}
                     planet={item.planet}
                     date={item.date}
-                    image={<img src={image.url} alt="nasa" width="300" height="200"/>}
+                    image={<img src={image} alt="nasa" width="300" height="200"/>}
                     />
                 </div>
                 )
             })} 
 
         </ScreenContainer>
-        <BackButton onClick={goToHomePage}>VOLTAR</BackButton>
+        <BackButton onClick={goToHomePage}>Voltar</BackButton>
       </PageContainer>
     )
 }

@@ -12,9 +12,7 @@ const TripsAnalyticsPage = (props) => {
  const id = pathParams.id
  
 
-  useEffect(() => {
-    getTripDetail()
-  }, [])
+
 
  const getTripDetail = () => {
     axios
@@ -57,6 +55,10 @@ const TripsAnalyticsPage = (props) => {
     const goToTripsManagerPage = () => {
         history.push("/managerarea")
     }
+
+    useEffect(() => {
+      getTripDetail()
+    }, [])
 
     return (
     <PageContainer>
