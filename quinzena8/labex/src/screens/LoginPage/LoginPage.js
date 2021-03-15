@@ -1,76 +1,79 @@
-import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
-import NavBar from "../../components/NavBar/NavBar";
-import { useInput } from "../../hooks/useInput";
-import {baseUrl} from "../../constants/request"
-import {goToAdmPage} from "../../routes/Coordinator"
-import {DivLogin, TitleLogin, InputLogin, ButtonLogin} from "./styled"
-import { TextField, Button } from '@material-ui/core'
-import {useForm} from '../../hooks/useForm'
-import {LoginForm} from './styled'
+import axios from "axios"
+import React, { useState, useEffect } from "react"
+import {useHistory} from "react-router-dom"
+import {baseUrl} from "../../constants/url"
+import {Login, Input, ButtonSignIn, ButtonBack} from "./styles"
+import {useForm} from "../../hooks/useForm"
+
+export function LoginPage() {
+ const history = useHistory()
+ const {form, onChange} = useForm({email: "", password: ""})
 
 
-const LoginPage = () => {
-
-  const history = useHistory();
-
-  const [form, onChangeInput] = useForm({
-    email: '',
-    password: ''
-  })
-
-  const onSubmit = (event) => {
-    event.preventDefault()
-
-    const body = {
-      email: form["email"],
-      password: form.password,
-    };
-
-    axios
-      .post(baseUrl + "/login", body)
-      .then((response) => {
-        window.localStorage.setItem("token", response.data.token);
-        goToAdmPage(history)
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    console.log("token", token)
-    if (token) {
-      goToAdmPage(history);
+    const goToHomePage = () => {
+        history.push("/")
     }
-  }, [history]);
 
+ 
+    const handleInput = (event) => {
+      const {value, name} = event.target
+      onChange(value, name)
+    }
 
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+    
+        if (token) {
+          history.push("/managerarea")
+        } 
+        
+    }, [history])
 
-  return (
-    <div>
-      <NavBar/>
-        <LoginForm onSubmit={onSubmit}>
-          <TextField
-            label={'Email'}
-            type={'email'}
-            onChange={onChangeInput}
-            value={form['email']}
-            name={'email'}
-          />
-          <TextField
-            label={'Senha'}
-            type={'password'}
-            onChange={onChangeInput}
-            value={form['password']}
-            name={'password'}
-          />
-          <Button variant={'contained'} color={'primary'} type={'submit'}>Entrar</Button>
-        </LoginForm>
-  </div>
-  );
-};
+//requisição para entrar área privada
+    const goToTripsManagerPage = (event) => {
+       
+      event.preventDefault();
 
-export default LoginPage;
+          const body = {
+              email: form.email,
+              password: form.password
+          }
+
+          axios.post(`${baseUrl}login`, body)
+          .then((res) => {
+            localStorage.setItem("token", res.data.token)
+            history.push("/managerarea")
+          })
+          .catch((err) => {
+              console.log(err)
+          })
+    }
+
+        return (
+            <div>
+              <Login>LOGIN</Login>
+              <form onSubmit={goToTripsManagerPage}>
+              <Input
+                value={form.email}
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                onChange={handleInput}
+                required
+              />
+              <Input
+                value={form.password}
+                type="password"
+                name="password"
+                placeholder="Senha"
+                onChange={handleInput}
+                required
+              />
+              <ButtonSignIn>ENTRAR</ButtonSignIn>
+              <ButtonBack onClick={goToHomePage}>VOLTAR</ButtonBack> 
+              </form> 
+            </div>
+  )
+}
+
+export default LoginPage

@@ -1,24 +1,15 @@
-import React from 'react'
-import Router from "./routes/Router";
-import Footer from "./components/Footer/Footer";
-import styled from "styled-components";
-import imageBack from "./Assets/background1.jpg"
+import './App.css'
+import Router from './router/Router'
+import styled from "styled-components"
 
-
-const DivMain = styled.div`
-  max-width: 100vw;
-  min-height: 100vh;
-`;
-
-function App() {
+const Container = styled.div`
+width: 100%;
+height: cover;
+`    
+export default function App() {
   return (
-    <div>
-      <DivMain>
-        <Router />
-      </DivMain>
-      <Footer />
-    </div>
-  );
+    <Container>
+        <Router/>
+    </Container>
+  )
 }
-
-export default App;
